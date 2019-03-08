@@ -78,6 +78,11 @@ public class Tetel {
     public void setMegjegyzes(String megjegyzes) {
         this.megjegyzes = megjegyzes;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        String s = ID + ";" + terem + ";" + nev + ";" 
+                 + ar + ";" + ev + ";" + megjegyzes;
+        return s.replace("null", "");
+    }
 }

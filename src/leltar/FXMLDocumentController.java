@@ -1,5 +1,8 @@
 package leltar;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.Optional;
@@ -10,11 +13,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 
 /**
  *
@@ -36,9 +39,6 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private TextField txtFelhasznalas;
-
-    @FXML
-    private Label txtTeremUzenet;
 
     @FXML
     private TableView<Eszkoz> tblEszkozok;
@@ -206,11 +206,11 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void leltar_hozzaad() {
-        if (cbxTerem.getValue()==null) {
+        if (cbxTerem.getValue() == null) {
             hiba("Hiba!", "Válaszd ki a termet!");
             return;
         }
-        if (cbxEszkoz.getValue()==null) {
+        if (cbxEszkoz.getValue() == null) {
             hiba("Hiba!", "Válaszd ki az eszközt!");
             return;
         }        
@@ -419,6 +419,27 @@ public class FXMLDocumentController implements Initializable {
             ab.terem_be(tblTermek.getItems(), cbxTerem.getItems());
         } else {
             hiba("Hiba!", v);
+        }
+    }
+
+    @FXML
+    void export() {
+        FileChooser fv = new FileChooser();
+        fv.setTitle("Exportálás");
+        FileChooser.ExtensionFilter szuro = 
+                new FileChooser.ExtensionFilter("CSV fájl", "*.csv");
+        fv.getExtensionFilters().add(szuro);
+        fv.setInitialDirectory(new File("."));
+        File f = fv.showSaveDialog(null);
+        if (f != null) {
+            try (PrintWriter ki = 
+                    new PrintWriter(f.getAbsoluteFile(),"cp1250")){
+                for (Tetel t : tblLeltar.getItems()) {
+                    ki.println(t);
+                }
+            } catch (IOException ex) {
+                hiba("Hiba", "Nem tudtam exportálni!");
+            }
         }
     }
     
