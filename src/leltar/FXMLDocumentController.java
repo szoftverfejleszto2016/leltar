@@ -187,7 +187,7 @@ public class FXMLDocumentController implements Initializable {
         cbxTerem.setValue(null);
         cbxEszkoz.setValue(null);
         txtAr.setText("");
-        txtEv.setText("");
+        txtEv.setText("" + LocalDate.now().getYear());
         txtMegjegyzes.setText("");
         cbxTerem.requestFocus();
     }

@@ -133,8 +133,8 @@
                         <Label text="Megjegyzes:" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
                         <ComboBox fx:id="cbxTerem" prefWidth="220.0" GridPane.columnIndex="1" />
                         <ComboBox fx:id="cbxEszkoz" prefWidth="220.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField fx:id="txtAr" GridPane.columnIndex="3" />
-                        <TextField fx:id="txtEv" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtAr" alignment="CENTER_RIGHT" GridPane.columnIndex="3" />
+                        <TextField fx:id="txtEv" alignment="CENTER_RIGHT" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                         <TextField fx:id="txtMegjegyzes" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="2" />
                         <Button mnemonicParsing="false" onAction="#leltar_hozzaad" prefWidth="100.0" text="Hozzáad" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                         <Button mnemonicParsing="false" onAction="#leltar_modosit" prefWidth="100.0" text="Módosít" GridPane.columnIndex="5" GridPane.rowIndex="1" />
