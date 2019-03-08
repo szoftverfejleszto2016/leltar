@@ -183,8 +183,8 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void leltar_uj() {
-        cbxTerem.setValue("");
-        cbxEszkoz.setValue("");
+        cbxTerem.setValue(null);
+        cbxEszkoz.setValue(null);
         txtAr.setText("");
         txtEv.setText("");
         txtMegjegyzes.setText("");
