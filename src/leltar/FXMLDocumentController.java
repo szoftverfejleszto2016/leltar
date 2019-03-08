@@ -95,6 +95,7 @@ public class FXMLDocumentController implements Initializable {
     void eszkoz_uj() {
         txtNev.setText("");
         txtJellemzok.setText("");
+        tblEszkozok.getSelectionModel().select(null);
         txtNev.requestFocus();
     }
 
@@ -189,6 +190,7 @@ public class FXMLDocumentController implements Initializable {
         txtAr.setText("");
         txtEv.setText("" + LocalDate.now().getYear());
         txtMegjegyzes.setText("");
+        tblLeltar.getSelectionModel().select(null);
         cbxTerem.requestFocus();
     }
 
@@ -338,6 +340,7 @@ public class FXMLDocumentController implements Initializable {
     void terem_uj() {
         txtTerem.setText("");
         txtFelhasznalas.setText("");  
+        tblTermek.getSelectionModel().select(null);
         txtTerem.requestFocus();
     }
 
