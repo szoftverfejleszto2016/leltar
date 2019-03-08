@@ -95,6 +95,7 @@ public class FXMLDocumentController implements Initializable {
     void eszkoz_uj() {
         txtNev.setText("");
         txtJellemzok.setText("");
+        txtNev.requestFocus();
     }
 
     @FXML
@@ -188,6 +189,7 @@ public class FXMLDocumentController implements Initializable {
         txtAr.setText("");
         txtEv.setText("");
         txtMegjegyzes.setText("");
+        cbxTerem.requestFocus();
     }
 
     private int get_teremid(String terem) {
@@ -335,7 +337,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     void terem_uj() {
         txtTerem.setText("");
-        txtFelhasznalas.setText("");        
+        txtFelhasznalas.setText("");  
+        txtTerem.requestFocus();
     }
 
     @FXML
